@@ -11,6 +11,12 @@ The Python code will be saved in the environment variable $PYCODE
 3. Print integer: complete a source code in order to print the integer stored in the variable number, followed by Battery street, followed by a new line.
 Result: 98 Battery street.
 
+4. Print float: complete a source code in order to print the float stored in the variable number with a precision of 2 digits.
+
+5. Print string: complete 3 times the value of str, followed by a new line, followed by the 9 first characters of str, followed by a new line.
+Loops or conditional statement are not allowed and the program should be maximum 5 lines long
+
+
 
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
