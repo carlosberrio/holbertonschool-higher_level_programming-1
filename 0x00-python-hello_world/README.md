@@ -23,6 +23,10 @@ Loops or conditional statement are not allowed and the program should be maximum
 - word_last_2 should contain the last 2 letters of the variable word
 - middle_word should contain the value of the variable word without the first and last letters
 
+8. Create a new sentence slicing another sentence.
+
+9. Easter Egg: write a Python script that prints The Zen of Python, by TimPeters, followed by a new line.
+
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
 
