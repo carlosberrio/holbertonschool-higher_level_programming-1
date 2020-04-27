@@ -16,7 +16,12 @@ Result: 98 Battery street.
 5. Print string: complete 3 times the value of str, followed by a new line, followed by the 9 first characters of str, followed by a new line.
 Loops or conditional statement are not allowed and the program should be maximum 5 lines long
 
+6. Play with strings: concat to sentences to print "Welcome to Holberton School!"
 
+7. Copy - Cut - Paste word = "Holberton":
+- word_first_3 should contain the first 3 letters of the variable word
+- word_last_2 should contain the last 2 letters of the variable word
+- middle_word should contain the value of the variable word without the first and last letters
 
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
