@@ -62,7 +62,7 @@ RETURN_VALUE Return with TOS to the caller of the function
 * Binary operations remove the top of the stack (TOS) and the second top-most stack item (TOS1) from the stack. They perform the operation, and put the result back on the stack.
 * Second numeric column =  offsets
 
-* Python complete script to check instructions:
+* Python script to check instructions:
 ```bash
 #!/usr/bin/python3
 import dis
