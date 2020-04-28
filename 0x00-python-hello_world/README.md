@@ -6,7 +6,7 @@ The Python file name will be saved in the environment variable $PYFILE
 1. Run inline: write a Shell script that runs Python code.
 The Python code will be saved in the environment variable $PYCODE
 
-2. Hello, print mandatory: write a Python script that prints exactly "Programming is like building a multilingual puzzle, followed by a new line, using the function print.
+2. Hello, print mandatory: write a Python script that prints exactly ' \"Programming is like building a multilingual puzzle ', followed by a new line, using the function print.
 
 3. Print integer: complete a source code in order to print the integer stored in the variable number, followed by Battery street, followed by a new line.
 Result: 98 Battery street.
@@ -26,6 +26,17 @@ Loops or conditional statement are not allowed and the program should be maximum
 8. Create a new sentence slicing another sentence.
 
 9. Easter Egg: write a Python script that prints The Zen of Python, by TimPeters, followed by a new line.
+
+10. Linked list cycle: function in C that checks if a singly linked list has a cycle in it.
+
+11. Hello, write: Python script that prints exactly: and that piece of art is useful - Dora Korpar, 2015-10-19, followed by a new line. Function write from the sys module / print is not allowed / script should print to stderr / exit with status 1
+
+12. Compile: script that compiles a Python script file.
+The Python file name will be stored in the environment variable $PYFILE
+The output filename has to be $PYFILEc (ex: export PYFILE=my_main.py => output filename: my_main.pyc)
+
+##### '.pyc' files in Python:
+Python is an interpreted language, as opposed to a compiled one, though the distinction can be blurry because of the presence of the bytecode compiler. This means that source files can be run directly without explicitly creating an executable which is then run. '.pyc' files contain byte code, which is what the Python interpreter compiles the source to. This code is then executed by Python's virtual machine.
 
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
