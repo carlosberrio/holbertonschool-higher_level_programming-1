@@ -1,9 +1,9 @@
 # 0x00. Python - Hello, World
 
-0. Run Python file: Write a Shell script that runs a Python script.
+0. Run Python file: Shell script that runs a Python script.
 The Python file name will be saved in the environment variable $PYFILE
 
-1. Run inline: write a Shell script that runs Python code.
+1. Run inline: Shell script that runs Python code.
 The Python code will be saved in the environment variable $PYCODE
 
 2. Hello, print mandatory: write a Python script that prints exactly ' \"Programming is like building a multilingual puzzle ', followed by a new line, using the function print.
@@ -37,6 +37,38 @@ The output filename has to be $PYFILEc (ex: export PYFILE=my_main.py => output f
 
 #### '.pyc' files in Python:
 Python is an interpreted language, as opposed to a compiled one, though the distinction can be blurry because of the presence of the bytecode compiler. This means that source files can be run directly without explicitly creating an executable which is then run. '.pyc' files contain byte code, which is what the Python interpreter compiles the source to. This code is then executed by Python's virtual machine.
+
+13. ByteCode -> Python #1
+Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
+
+#### Disassembly of def magic_calculation(a, b):
+
+3             0 LOAD_CONST               1 (98)
+              3 LOAD_FAST                0 (a)
+              6 LOAD_FAST                1 (b)
+              9 BINARY_POWER
+             10 BINARY_ADD
+             11 RETURN_VALUE
+
+* Bytecode instructions:
+"3" is the line number
+LOAD_CONST = Pushes co_consts[consti] onto the stack
+LOAD_FAST = Pushes a reference to the local co_varnames[var_num] onto the stack
+BINARY_POWER = POW OPR (TOS1 ** TOS)
+BINARY_ADD = SUM (TOS1 + TOS)
+RETURN_VALUE Return with TOS to the caller of the function
+
+* TOS = top-of-stack
+* Binary operations remove the top of the stack (TOS) and the second top-most stack item (TOS1) from the stack. They perform the operation, and put the result back on the stack.
+* Second numeric column =  offsets
+
+* Python complete script to check instructions:
+#!/usr/bin/python3
+import dis
+def magic_calculation(a, b):
+    return 98 + a ** b
+
+dis.dis(magic_calculation)
 
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
