@@ -35,7 +35,7 @@ Loops or conditional statement are not allowed and the program should be maximum
 The Python file name will be stored in the environment variable $PYFILE
 The output filename has to be $PYFILEc (ex: export PYFILE=my_main.py => output filename: my_main.pyc)
 
-##### '.pyc' files in Python:
+#### '.pyc' files in Python:
 Python is an interpreted language, as opposed to a compiled one, though the distinction can be blurry because of the presence of the bytecode compiler. This means that source files can be run directly without explicitly creating an executable which is then run. '.pyc' files contain byte code, which is what the Python interpreter compiles the source to. This code is then executed by Python's virtual machine.
 
 ### Author:
