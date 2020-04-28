@@ -42,14 +42,14 @@ Python is an interpreted language, as opposed to a compiled one, though the dist
 Write the Python function def magic_calculation(a, b): that does exactly the same as the following Python bytecode:
 
 #### Disassembly of def magic_calculation(a, b):
-
+```bash
 3             0 LOAD_CONST               1 (98)
               3 LOAD_FAST                0 (a)
               6 LOAD_FAST                1 (b)
               9 BINARY_POWER
              10 BINARY_ADD
              11 RETURN_VALUE
-
+```
 * Bytecode instructions:
 "3" is the line number
 LOAD_CONST = Pushes co_consts[consti] onto the stack
@@ -63,13 +63,14 @@ RETURN_VALUE Return with TOS to the caller of the function
 * Second numeric column =  offsets
 
 * Python complete script to check instructions:
+```bash
 #!/usr/bin/python3
 import dis
 def magic_calculation(a, b):
     return 98 + a ** b
 
 dis.dis(magic_calculation)
-
+```
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
 
