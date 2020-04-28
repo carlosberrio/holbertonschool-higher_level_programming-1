@@ -9,4 +9,4 @@ if rem > 5:
 elif rem == 0:
     print("0")
 else:
-    print("less than 6 and is not 0")
+    print("less than 6 and not 0")
