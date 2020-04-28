@@ -51,12 +51,12 @@ Write the Python function def magic_calculation(a, b): that does exactly the sam
              11 RETURN_VALUE
 ```
 * Bytecode instructions:
-"3" is the line number
-LOAD_CONST = Pushes co_consts[consti] onto the stack
-LOAD_FAST = Pushes a reference to the local co_varnames[var_num] onto the stack
-BINARY_POWER = POW OPR (TOS1 ** TOS)
-BINARY_ADD = SUM (TOS1 + TOS)
-RETURN_VALUE Return with TOS to the caller of the function
+- "3" is the line number
+- LOAD_CONST = Pushes co_consts[consti] onto the stack
+- LOAD_FAST = Pushes a reference to the local co_varnames[var_num] onto the stack
+- BINARY_POWER = POW OPR (TOS1 ** TOS)
+- BINARY_ADD = SUM (TOS1 + TOS)
+- RETURN_VALUE Return with TOS to the caller of the function
 
 * TOS = top-of-stack
 * Binary operations remove the top of the stack (TOS) and the second top-most stack item (TOS1) from the stack. They perform the operation, and put the result back on the stack.
