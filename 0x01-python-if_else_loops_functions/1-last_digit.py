@@ -5,7 +5,7 @@ rem = number % -10 if number < 0 else number % 10
 print("Last digit of {:d} is {:d} and is "
       .format(number, rem), end="")
 if rem > 5:
-    print("greater than five")
+    print("greater than 5")
 elif rem == 0:
     print("0")
 else:
