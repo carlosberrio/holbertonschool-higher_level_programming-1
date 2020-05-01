@@ -28,6 +28,12 @@ For numbers which are multiples of both three and five print "FizzBuzz".
 
 13. Insert in sorted linked list. Function in C that inserts a number into a sorted singly linked list.
 
+14. Smile in the mirror. Program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line.
+
+15. Remove at position. Function that creates a copy of the string, removing the character at the position n (not the Python way, the C array index).
+
+16. ByteCode -> Python #2
+
 * with dis module:
 ```bash
 #!/usr/bin/python3
