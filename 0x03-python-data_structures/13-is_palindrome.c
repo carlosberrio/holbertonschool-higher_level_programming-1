@@ -1,19 +1,24 @@
 #include "lists.h"
 
 /**
- * is_palindrome - Checks if a singly linked list is a palindrome
- * @head: address of pointer to list
- * Return: 0 if it is not a palindrome, 1 if it is a palindrome,
- * An empty list is considered a palindrome
+ * add_nodeint - Adds a new node at the beginning of a listint_t list
+ * @head: first element of the list
+ * @n: integer to copy
+ * Return: Address of the new element, or NULL if it failed
  */
-int counter(listint_t *head)
+
+listint_t *add_nodeint(listint_t **head, const int n)
 {
-	int c = 0;
+	listint_t *new = malloc(sizeof(listint_t));
 
-	for ( ; head ; head = head->next, c++)
-		;
+	if (new == NULL)
+		return (NULL);
 
-	return (c);
+	new->n = n;
+	new->next = *head;
+	*head = new;
+
+	return (new);
 }
 
 /**
@@ -24,22 +29,21 @@ int counter(listint_t *head)
  */
 int is_palindrome(listint_t **head)
 {
-	int c = counter(*head), i = 0;
-	int *numbers = malloc(sizeof(int) * c);
+	listint_t *reversed = NULL, *current = *head;
 
-	for (  ; (*head) ; head = &(*head)->next, i++)
-		numbers[i] = (*head)->n;
-
-	i = 0;
-	while(i < (c / 2))
+	while (current)
 	{
-		if(numbers[i] != numbers[c-i-1])
-		{
-			free(numbers);
-			return (0);
-		}
-		i++;
+		add_nodeint(&reversed, current->n);
+		current = current->next;
 	}
-	free(numbers);
+	while ((*head))
+	{
+		if ((*head)->n != reversed->n)
+			return (0);
+
+		head = &(*head)->next;
+		reversed = reversed->next;
+	}
+
 	return (1);
 }
