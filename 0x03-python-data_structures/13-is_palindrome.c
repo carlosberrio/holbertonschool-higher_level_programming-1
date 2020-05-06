@@ -34,10 +34,8 @@ int is_palindrome(listint_t **head)
 	while (i < (c / 2))
 	{
 		if (numbers[i] != numbers[c - i - 1])
-		{
-			free(numbers);
 			return (0);
-		}
+
 		i++;
 	}
 	return (1);
