@@ -11,7 +11,7 @@ class Square:
         Args:
             size (int): length of a side of the square
         """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
@@ -26,9 +26,9 @@ class Square:
             ValueError: if size is less than 0
         """
         if type(value) is not int:
-            raise TypeError('size must be an integer')
+            raise TypeError("size must be an integer")
         if value < 0:
-            raise ValueError('size must be >= 0')
+            raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
@@ -41,7 +41,7 @@ class Square:
 
     def my_print(self):
         """Prints square or new line if size is 0 """
-        for row in range(self.__size):
-            for col in range(self.__size):
-                print('#', end="\n" if col is self.__size - 1 else "")
+        for r in range(self.__size):
+            for c in range(self.__size):
+                print('#', end="\n" if c is self.size - 1 and r != c else "")
         print()
