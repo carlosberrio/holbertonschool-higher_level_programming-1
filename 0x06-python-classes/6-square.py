@@ -11,8 +11,8 @@ class Square:
             size (int): length of a side of the square
             position (int, int): coordinates of the square
         """
-        self.size = size
-        self.position = position
+        self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -47,8 +47,8 @@ class Square:
            type(value[0]) is not int or value[0] < 0 or \
            type(value[1]) is not int or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+
+        self.__position = value
 
     def area(self):
         """Calculates the square's area
