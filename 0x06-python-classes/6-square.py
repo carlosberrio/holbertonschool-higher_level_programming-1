@@ -68,8 +68,5 @@ class Square:
             print("")
 
         for r in range(self.__size):
-            for s in range(self.__position[0]):
-                print(' ', end="")
-            for c in range(self.__size):
-                print('#', end="")
-            print("")
+            print("".join([' ' for s in range(self.__position[0])]), end="")
+            print("".join(['#' for c in range(self.__size)]))
