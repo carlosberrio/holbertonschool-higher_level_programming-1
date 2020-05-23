@@ -100,3 +100,15 @@ import function from module:
     ...
     OverflowError: cannot convert float infinity to integer
 
+17. Test one negative float:
+
+    >>> add_integer(-95.5)
+    3
+
+18. Test add nan:
+
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
