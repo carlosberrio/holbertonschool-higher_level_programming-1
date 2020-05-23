@@ -1,0 +1,96 @@
+========================================
+TEST SUITE for ``4-print_square`` module
+========================================
+
+Using ``print_square``
+-------------------
+
+import function from module:
+
+    >>> print_square = __import__('4-print_square').print_square
+
+0. Test normal print 4:
+
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+1. Test normal print 10:
+
+   >>> print_square(10)
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+   ##########
+
+2. Test normal print 0:
+
+    >>> print_square(0)
+
+3. Test normal print 1:
+
+    >>> print_square(1)
+    #
+
+4. Test with float type:
+    >>> print_square(1.5)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+5. Test negative number:
+
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+6. Test negative float:
+    >>> print_square(-1.0)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+7. Test str:
+    >>> print_square("str")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+8. Test None:
+    >>> print_square(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+9. Test inf:
+    >>> print_square(float('inf'))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+10. Test nan:
+    >>> print_square(float('nan'))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+11. Test missing argument:
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+12. Test with too many arguments:
+    >>> print_square(1, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() takes 1 positional argument but 2 were given

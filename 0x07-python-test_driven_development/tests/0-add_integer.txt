@@ -1,0 +1,101 @@
+=======================================
+TEST SUITE for ``0-add_integer`` module
+=======================================
+
+Using ``add_integer``
+---------------------
+
+import function from module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+0. Test one argument:
+
+    >>> add_integer(100)
+    198
+
+1. Test two positive arguments:
+
+    >>> add_integer(98, 100)
+    198
+
+2. Test positive with negative:
+
+    >>> add_integer(100, -50)
+    50
+
+3. Test negative with positive:
+
+    >>> add_integer(-100, 50)
+    -50
+
+4. Test two negative arguments:
+
+    >>> add_integer(-100, -100)
+    -200
+
+5. Test missing arguments:
+    >>> add_integer()
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+6. Test with None as argument:
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+7. Test with firs arg float:
+    >>> add_integer(100.3, -2)
+    98
+
+8. Test with firs arg float:
+    >>> add_integer(50, 20.5)
+    70
+
+9. Test with wrong first arg:
+    >>> add_integer("hello", 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+10. Test with wrong args:
+    >>> add_integer("hello", "world")
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+11. Test with wrong second arg:
+    >>> add_integer(3, "hello")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+12. Test with too many arguments:
+    >>> add_integer(1, 2, 3)
+    Traceback (most recent call last):
+    ...
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+13. Test with two floats:
+    >>> add_integer(20.5, 20.5)
+    40
+
+14. Test number with bool:
+    >>> add_integer(3, False)
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
+
+15. Test float overflow:
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+16. Add infinity:
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer

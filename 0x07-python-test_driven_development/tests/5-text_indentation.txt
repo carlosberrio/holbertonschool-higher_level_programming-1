@@ -1,0 +1,101 @@
+========================================
+TEST SUITE ``5-`text_indentation` module
+========================================
+
+Using ``text_indentation``
+-------------------
+
+Importing the function from the module:
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+0. Test for no args:
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+1. Test with too many arguments:
+    >>> text_indentation("Hello", "World")
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+2. Test None as argument:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+3. Test for invalid type:
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+4. Test for delimiter ending:
+    >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing.")
+    Lorem ipsum dolor sit amet, consectetur adipiscing.
+    <BLANKLINE>
+
+5. Test for no sep:
+   >>> text_indentation("This is a string")
+   This is a string
+
+6. Test spaces at begginning:
+   >>> text_indentation("    This is a string")
+   This is a string
+
+7. Test spaces at ending:
+   >>> text_indentation("This is a string    ")
+   This is a string
+
+8. Test spaces both sides:
+   >>> text_indentation("    This is a string    ")
+   This is a string
+
+9. Test empty string:
+    >>> text_indentation("")
+
+10. Test one space string:
+    >>> text_indentation(" ")
+
+11. Test newline:
+    >>> text_indentation("\n")
+    <BLANKLINE>
+
+12. Test all sep:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+13. Test:
+    >>> text_indentation("?Hello..")
+    ?
+    <BLANKLINE>
+    Hello.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+14. Test seps and newlines:
+    >>> text_indentation("?\n\n.\n\n:")
+    ?
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+15. Test:
+    >>> text_indentation("     .   hi")
+    .
+    <BLANKLINE>
+    hi

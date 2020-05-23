@@ -1,0 +1,81 @@
+=======================================
+TEST SUITE for ``3-say_my_name`` module
+=======================================
+
+Using ``say_my_name``
+-------------------
+
+import function from module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+0. Test basic:
+
+    >>> say_my_name("Mick", "Jagger")
+    My name is Mick Jagger
+
+1. Test one argument:
+
+    >>> say_my_name("John")
+    My name is John 
+
+2. Test first arg + empty string:
+
+    >>> say_my_name("John", "")
+    My name is John 
+
+3. Test empty string + second arg:
+
+    >>> say_my_name("", "Doe")
+    My name is  Doe
+
+4. Test first arg invalid:
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+5. Test second arg invalid:
+    >>> say_my_name("Walter", ["Baby_blue"])
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+6. Test both invalid arguments:
+    >>> say_my_name(307, ["Baby_blue"])
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+7. Test first arg with cast:
+
+    >>> say_my_name(str(2), "Pac")
+    My name is 2 Pac
+
+8. Test second arg with cast:
+
+    >>> say_my_name("Keith", str(313434))
+    My name is Keith 313434
+
+9. Test both names empty:
+
+    >>> say_my_name("", "")
+    My name is  
+
+10. Test both names with spaces:
+
+    >>> say_my_name("   ", "   ")
+    My name is        
+
+11. Test missing arguments:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+12. Test with too many arguments:
+    >>> say_my_name("you're", "goddamn", "right")
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
