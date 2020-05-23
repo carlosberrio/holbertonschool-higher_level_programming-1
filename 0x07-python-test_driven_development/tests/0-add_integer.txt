@@ -99,3 +99,4 @@ import function from module:
     Traceback (most recent call last):
     ...
     OverflowError: cannot convert float infinity to integer
+

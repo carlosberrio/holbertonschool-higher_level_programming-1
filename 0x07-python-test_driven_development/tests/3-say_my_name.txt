@@ -9,8 +9,7 @@ import function from module:
 
     >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-
-0. Test basic:
+0. Test basic print:
 
     >>> say_my_name("Mick", "Jagger")
     My name is Mick Jagger
@@ -79,3 +78,4 @@ import function from module:
     Traceback (most recent call last):
     ...
     TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+

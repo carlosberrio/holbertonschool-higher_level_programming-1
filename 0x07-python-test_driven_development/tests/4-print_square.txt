@@ -94,3 +94,4 @@ import function from module:
     Traceback (most recent call last):
     ...
     TypeError: print_square() takes 1 positional argument but 2 were given
+
