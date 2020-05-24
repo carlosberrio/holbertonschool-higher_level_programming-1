@@ -4,34 +4,34 @@
 
 class Node:
     """Defines a node"""
+    """Initializes a node - Constructor
+       Args:
+          data (int): number to insert in the node
+          next_node (Node): pointer to the next node in the chain
+    """
     def __init__(self, data, next_node=None):
-        """Initializes a node - Constructor
-        Args:
-            data (int): number to insert in the node
-            next_node (Node): pointer to the next node in the chain
-        """
         self.data = data
-        self.next_node = None
+        self.next_node = next_node
 
-        @property
-        def data(self):
-            return self.__data
+    @property
+    def data(self):
+        return self.__data
 
-        @data.setter
-        def data(self, value):
-            if type(value) is not int:
-                raise TypeError('data must be an integer')
-            self.__data = value
+    @data.setter
+    def data(self, value):
+        if type(value) is not int:
+            raise TypeError('data must be an integer')
+        self.__data = value
 
-        @property
-        def next_node(self):
-            return self.__next_node
+    @property
+    def next_node(self):
+        return self.__next_node
 
-        @next_node.setter
-        def next_node(self, value):
-            if value is not None or type(value) is not Node:
-                raise TypeError('next_node must be a Node object')
-            self.__next_node = value
+    @next_node.setter
+    def next_node(self, value):
+        if value is not None and type(value) is not Node:
+            raise TypeError('next_node must be a Node object')
+        self.__next_node = value
 
 
 class SinglyLinkedList:
