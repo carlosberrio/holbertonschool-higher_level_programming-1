@@ -21,6 +21,10 @@
 * How does Python find the attributes of an object or class
 * How to use the getattr function
 
+## Resources:
+* [Object-Oriented Programming](https://www.python-course.eu/python3_object_oriented_programming.php)
+* [Properties vs. Getters and Setters](https://www.python-course.eu/python3_properties.php)
+
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
 
