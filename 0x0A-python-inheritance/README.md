@@ -15,6 +15,7 @@
 
 ## Resources
 * [Python Inheritance](https://www.programiz.com/python-programming/inheritance)
+* [Python 3 Object Oriented Programming](https://hub.packtpub.com/inheritance-python/)
 * [Programiz - Python Inheritance](https://www.programiz.com/python-programming/inheritance)
 * [Learn to Program 10 : Inheritance Magic Methods](https://www.youtube.com/watch?v=d8kCdLCi6Lk)
 * [Python issubclass()](https://www.programiz.com/python-programming/methods/built-in/issubclass)
