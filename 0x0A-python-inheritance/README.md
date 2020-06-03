@@ -1,4 +1,4 @@
-# 0x09. Python - Everything is object
+# 0x0A. Python - Inheritance
 
 ## Learning Objectives:
 * What is a superclass, baseclass or parentclass
@@ -15,6 +15,14 @@
 
 ## Resources
 * [Python Inheritance](https://www.programiz.com/python-programming/inheritance)
+* [Programiz - Python Inheritance](https://www.programiz.com/python-programming/inheritance)
+* [Learn to Program 10 : Inheritance Magic Methods](https://www.youtube.com/watch?v=d8kCdLCi6Lk)
+* [Python issubclass()](https://www.programiz.com/python-programming/methods/built-in/issubclass)
+* [Python super()](https://realpython.com/python-super/#:~:text=__init__()%20of%20the%20superclass,directly%20on%20it%3A%20super().&text=This%20is%20especially%20in%20handy,subclasses%20inheriting%20from%20one%20superclass.)
+* [Python dir()](https://www.programiz.com/python-programming/methods/built-in/dir)
+* [Python setattr()](https://www.programiz.com/python-programming/methods/built-in/setattr)
+* [Python hasattr()](https://www.programiz.com/python-programming/methods/built-in/hasattr)
+* [The magic behind Attribute Access in Python](https://codesachin.wordpress.com/2016/06/09/the-magic-behind-attribute-access-in-python/#:~:text=The%20__dict__%20attribute,attribute%20name%20to%20its%20value.)
 
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
