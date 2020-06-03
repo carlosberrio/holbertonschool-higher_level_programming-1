@@ -3,6 +3,7 @@
 
 
 class MyInt(int):
+    """Defines MyInt Class"""
     def __eq__(self, other):
         """inverts equal"""
         return int(self) != int(other)
