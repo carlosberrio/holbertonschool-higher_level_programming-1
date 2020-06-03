@@ -105,3 +105,9 @@ integer_validator Method Tests:
     >>> bg.integer_validator("test", [5])
     Traceback (most recent call last):
     TypeError: test must be an integer
+
+12. Test invalid argument (zero value):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", 0)
+    Traceback (most recent call last):
+    ValueError: test must be greater than 0
