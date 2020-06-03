@@ -4,9 +4,9 @@
 
 class MyInt(int):
     def __eq__(self, other):
-        """Override equals"""
+        """inverts equal"""
         return int(self) != int(other)
 
     def __ne__(self, other):
-        """Override not-equals"""
+        """inverts non-equal"""
         return int(self) == int(other)
