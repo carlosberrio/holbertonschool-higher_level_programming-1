@@ -10,4 +10,3 @@ class MyInt(int):
     def __ne__(self, other):
         """inverts non-equal"""
         return int(self) == int(other)
-    
