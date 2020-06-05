@@ -1,0 +1,113 @@
+=======================================
+TEST SUITE for ``7-base_geometry`` module
+=======================================
+
+Using ``BaseGeometry``
+---------------------
+
+import class from module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+------------------
+area Method Tests:
+------------------
+0. Calling Method for task 7:
+    >>> bg = BaseGeometry()
+    >>> bg.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+1. Area Method with too many arguments:
+    >>> bg = BaseGeometry()
+    >>> bg.area(20)
+    Traceback (most recent call last):
+    TypeError: area() takes 1 positional argument but 2 were given
+
+--------------------------------
+integer_validator Method Tests:
+--------------------------------
+0. Test without arguments:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+1. Test too many arguments:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator(1, 'c', 3)
+    Traceback (most recent call last):
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+2. Test invalid argument (float):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", 3.0)
+    Traceback (most recent call last):
+    TypeError: test must be an integer
+
+3. Test invalid argument (bool):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", False)
+    Traceback (most recent call last):
+    TypeError: test must be an integer
+
+4. Test invalid argument (None):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", None)
+    Traceback (most recent call last):
+    TypeError: test must be an integer
+
+5. Test invalid argument (negative value):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", -5)
+    Traceback (most recent call last):
+    ValueError: test must be greater than 0
+
+6. Test invalid argument:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", )
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+7. Test empty string as name:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("", 5)
+
+8. Test valid arguments:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("name", 5)
+
+9. Test Without value:
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test")
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+10. Test invalid argument (dictionary):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", {34, 14})
+    Traceback (most recent call last):
+    TypeError: test must be an integer
+
+11. Test invalid argument (tupla):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", (1, 3))
+    Traceback (most recent call last):
+    TypeError: test must be an integer
+
+12. Test invalid argument (string):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", "Driven")
+    Traceback (most recent call last):
+    TypeError: test must be an integer
+
+13. Test invalid argument (list):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", [5])
+    Traceback (most recent call last):
+    TypeError: test must be an integer
+
+12. Test invalid argument (zero value):
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("test", 0)
+    Traceback (most recent call last):
+    ValueError: test must be greater than 0
