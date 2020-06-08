@@ -31,25 +31,22 @@ class Square(Rectangle):
                                                  self.y, self.width)
 
     def update(self, *args, **kwargs):
-        """Calls upd_attr method according arguments pack type"""
+        """Assigns a key/value argument to attributes"""
+        slots = ['id', 'width', 'height', 'x', 'y']
         if args:
             """No-keyword argument attributes"""
-            self.upd_attr(*args)
+            for idx, value in enumerate(args):
+                if hasattr(self, slots[idx]):
+                    setattr(self, slots[idx], value)
         elif kwargs:
             """Dictionary: key/value attributes"""
-            self.upd_attr(**kwargs)
-
-    def upd_attr(self, id=None, size=0, x=0, y=0):
-        """Updates instance attributes"""
-        if id is not None:
-            self.id = id
-        if size:
-            self.size = size
-        if x:
-            self.x = x
-        if y:
-            self.y = y
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+        else:
+            return
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Square"""
+        # change this method for something escalable
         return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}

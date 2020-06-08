@@ -89,26 +89,20 @@ class Rectangle(Base):
                                                        self.__height)
 
     def update(self, *args, **kwargs):
-        """Calls upd_attr method according arguments pack type"""
-        if args:  # can be set with: n, arg in enumerate(args) but DRY
+        """Assigns a key/value argument to attributes"""
+        slots = ['id', 'width', 'height', 'x', 'y']
+        if args:
             """No-keyword argument attributes"""
-            self.upd_attr(*args)
+            for idx, attr_val in enumerate(args):
+                if hasattr(self, slots[idx]):
+                    setattr(self, slots[idx], attr_val)
         elif kwargs:
             """Dictionary: key/value attributes"""
-            self.upd_attr(**kwargs)
-
-    def upd_attr(self, id=None, width=0, height=0, x=0, y=0):
-        """Updates instance attributes"""
-        if id is not None:
-            self.id = id
-        if width:
-            self.width = width
-        if height:
-            self.height = height
-        if x:
-            self.x = x
-        if y:
-            self.y = y
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
+        else:
+            return
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
