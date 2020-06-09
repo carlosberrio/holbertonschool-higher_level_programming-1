@@ -13,8 +13,9 @@ class TestRectangleClass(unittest.TestCase):
     Test Cases for Rectangle Class Module Functionality
     """
     def setUp(self):
+        """Reset instances for all tests"""
         Base._Base__nb_objects = 0
-        
+
     # ------------- Tests for Constructor --------------
     # TESTS CLASS
     def test_class_instance(self):
@@ -116,7 +117,7 @@ positional arguments but 7 were given"
 
     # ------------- Tests for Methods --------------
     def test_area(self):
-        """test area calculation"""
+        """test area method"""
         r = Rectangle(5, 5)
         self.assertEqual(r.area(), 25)
         r = Rectangle(10, 2, 5)
@@ -131,6 +132,7 @@ positional arguments but 7 were given"
             r.area(10)
 
     def test_str(self):
+        """Test for the __str__ method"""
         r = Rectangle(8, 12, 2, 1, 12)
         self.assertEqual(r.__str__(), "[Rectangle] (12) 2/1 - 8/12")
         r = Rectangle(5, 5, 1, 1)
@@ -139,17 +141,6 @@ positional arguments but 7 were given"
         self.assertEqual(r.__str__(), "[Rectangle] (2) 0/0 - 22/22")
         r = Rectangle(33, 33)
         self.assertEqual(r.__str__(), "[Rectangle] (3) 0/0 - 33/33")
-        """
-       Test for the __str__ method
-        r = Rectangle(5, 5)
-        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 5/5")
-        r = Rectangle(10, 2, 5)
-        self.assertEqual(str(r), "[Rectangle] (2) 5/0 - 10/2")
-        r = Rectangle(4, 15, 1, 4, 99)
-        self.assertEqual(str(r), "[Rectangle] (99) 1/4 - 4/15")
-        r = Rectangle(10, 20, 30, 40)
-        self.assertEqual(str(r), "[Rectangle] (3) 30/40 - 10/20"
-        """
 
     def test_basic_display(self):
         """Test display without x and y"""
@@ -175,16 +166,39 @@ positional arguments but 7 were given"
         with io.StringIO() as buf, redirect_stdout(buf):
             r.display()
             output = buf.getvalue()
-            self.assertEqual(output, (("\n" * 4) + (" " * 1 + "#" * 4 + "\n") * 15))
+            self.assertEqual(
+                output, (("\n" * 4) + (" " * 1 + "#" * 4 + "\n") * 15))
         r = Rectangle(5, 3, 0, 0, 1)
         with io.StringIO() as buf, redirect_stdout(buf):
             r.display()
             output = buf.getvalue()
-            print('hola')
             self.assertEqual(output, (" " * 0 + "#" * 5 + "\n") * 3)
+
+    def test_to_dict(self):
+        """Test regular to_dictionary"""
+        r = Rectangle(10, 2, 5)
+        d = r.to_dictionary()
+        d1 = {"id": 1, "width": 10, "height": 2, "x": 5, "y": 0}
+        self.assertEqual(d1, d)
+        self.assertTrue(type(d1) is dict)
+
+        r = Rectangle(4, 15, 1, 4, 99)
+        d = r.to_dictionary()
+        d2 = {'id': 99, 'width': 4, 'height': 15, 'x': 1, 'y': 4}
+        self.assertEqual(d2, d)
+        self.assertTrue(type(d2) is dict)
+
+        r = Rectangle(5, 3, 0, 0, 1)
+        d = r.to_dictionary()
+        d3 = {'id': 1, 'width': 5, 'height': 3, 'x': 0, 'y': 0}
+        self.assertEqual(d3, d)
+        self.assertTrue(type(d3) is dict)
+
+        r_up = Rectangle(1, 1, 1, 1, 1)
+        r_up.update(**d3)
+        self.assertEqual(str(r), str(r_up))
+        self.assertNotEqual(r, r_up)
+
 
 if __name__ == "__main__":
     unittest.main()
-
-
-

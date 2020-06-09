@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Module for unittests of base.py.
-"""
+"""Unittest for Base Class Module"""
 import os
 import unittest
 from models.base import Base
@@ -14,6 +12,7 @@ class TestBaseClass(unittest.TestCase):
     Test Cases for Base Class Module Functionality
     """
     def setUp(self):
+        """Reset instances for all tests"""
         Base._Base__nb_objects = 0
 
     # ------------- Tests for Constructor --------------
@@ -63,23 +62,24 @@ class TestBaseClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             Base.__init__()
         with self.assertRaises(TypeError):
-            Base(10, 10)  # b = Base(10, 10)
-    
+            Base(10, 10)
+
+
 class TestBase_to_json_string(unittest.TestCase):
     """
     Testing to_json_string method
     """
     def test_to_json_string_rectangle_type(self):
-        r = Rectangle(10, 7, 2, 8, 6)
+        r = Rectangle(2, 4, 6, 8, 10)
         self.assertEqual(str, type(Base.to_json_string([r.to_dictionary()])))
 
     def test_to_json_string_rectangle_one_dict(self):
-        r = Rectangle(10, 7, 2, 8, 6)
+        r = Rectangle(10, 8, 6, 4, 2)
         self.assertTrue(len(Base.to_json_string([r.to_dictionary()])) == 53)
 
     def test_to_json_string_rectangle_two_dicts(self):
-        r1 = Rectangle(2, 3, 5, 19, 2)
-        r2 = Rectangle(4, 2, 4, 1, 12)
+        r1 = Rectangle(2, 4, 6, 8, 10)
+        r2 = Rectangle(10, 8, 6, 4, 2)
         list_dicts = [r1.to_dictionary(), r2.to_dictionary()]
         self.assertTrue(len(Base.to_json_string(list_dicts)) == 106)
 
@@ -118,7 +118,7 @@ class TestBase_save_to_file(unittest.TestCase):
     """
     @classmethod
     def tearDown(self):
-        """Delete any created files."""
+        """Delete any created files"""
         try:
             os.remove("Rectangle.json")
         except IOError:
@@ -251,10 +251,10 @@ class TestBase_create(unittest.TestCase):
     Testing create method
     """
     def test_create_rectangle_original(self):
-        r1 = Rectangle(3, 5, 1, 2, 7)
+        r1 = Rectangle(10, 8, 6, 4, 2)
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
-        self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r1))
+        self.assertEqual("[Rectangle] (2) 6/4 - 10/8", str(r1))
 
     def test_create_rectangle_new(self):
         r1 = Rectangle(3, 5, 1, 2, 7)
@@ -263,7 +263,7 @@ class TestBase_create(unittest.TestCase):
         self.assertEqual("[Rectangle] (7) 1/2 - 3/5", str(r2))
 
     def test_create_rectangle_is(self):
-        r1 = Rectangle(3, 5, 1, 2, 7)
+        r1 = Rectangle(10, 8, 6, 4, 2)
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
         self.assertIsNot(r1, r2)

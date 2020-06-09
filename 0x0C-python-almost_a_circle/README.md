@@ -14,6 +14,7 @@
 * [os.path — Common pathname manipulations](https://docs.python.org/2/library/os.path.html)
 * [unittest module](https://docs.python.org/3.4/library/unittest.html#module-unittest)
 * [Python test cheatsheet](https://www.pythonsheets.com/notes/python-tests.html)
+* [The Beginner's Guide to Python Turtle](https://realpython.com/beginners-guide-python-turtle/#picking-the-pen-up-and-down)
 
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
