@@ -142,6 +142,12 @@ positional arguments but 6 were given"
             self.assertEqual(output, (
                 ("\n" * 0) + (" " * 3 + "#" * 5 + "\n") * 5))
 
+    def test_update(self):
+        """ Tests Method update with pack args """
+        s = Square(1, 1, 1)
+        s.update(25, 5, 10, 89)
+        self.assertEqual(s.__str__(), "[Square] (25) 10/89 - 5")
+
     def test_to_dict(self):
         """Test regular to_dictionary"""
         r = Square(10, 2, 5)

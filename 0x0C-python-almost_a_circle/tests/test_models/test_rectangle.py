@@ -117,7 +117,7 @@ positional arguments but 7 were given"
 
     # ------------- Tests for Methods --------------
     def test_area(self):
-        """test area method"""
+        """Test area method"""
         r = Rectangle(5, 5)
         self.assertEqual(r.area(), 25)
         r = Rectangle(10, 2, 5)
@@ -174,6 +174,12 @@ positional arguments but 7 were given"
             output = buf.getvalue()
             self.assertEqual(output, (" " * 0 + "#" * 5 + "\n") * 3)
 
+    def test_update(self):
+        """ Tests Method update with pack args """
+        r = Rectangle(1, 1, 1, 1, 1)
+        r.update(25, 5, 10, 89, 90)
+        self.assertEqual(r.__str__(), "[Rectangle] (25) 89/90 - 5/10")
+
     def test_to_dict(self):
         """Test regular to_dictionary"""
         r = Rectangle(10, 2, 5)
@@ -198,7 +204,3 @@ positional arguments but 7 were given"
         r_up.update(**d3)
         self.assertEqual(str(r), str(r_up))
         self.assertNotEqual(r, r_up)
-
-
-if __name__ == "__main__":
-    unittest.main()

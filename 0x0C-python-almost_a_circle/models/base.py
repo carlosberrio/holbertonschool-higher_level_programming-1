@@ -90,10 +90,12 @@ class Base:
             R = randrange(0, 257, 10)
             G = randrange(0, 257, 10)
             B = randrange(0, 257, 10)
-            t.setpos(figure.x, figure.y)
+            t.setpos(
+                figure.x - 150 + randrange(0, 100),
+                -75 + figure.y + randrange(0, 100))
             t.speed(1)
             t.fillcolor(R, G, B)
-            t.pencolor("black")  # line color
+            t.pencolor('black')  # line color
             t.begin_fill()
             t.forward(figure.width)
             t.left(90)
