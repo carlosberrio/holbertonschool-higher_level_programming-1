@@ -34,11 +34,11 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """Assigns a key/value argument to attributes"""
-        slots = ['id', 'width', 'height', 'x', 'y']
+        slots = ['id', 'size', 'x', 'y']
         if args:
             """No-keyword argument attributes"""
             for idx, value in enumerate(args):
-                if hasattr(self, slots[idx]) and idx < 5:
+                if hasattr(self, slots[idx]) and idx < 4:
                     setattr(self, slots[idx], value)
         elif kwargs:
             """Dictionary: key/value attributes"""
