@@ -27,6 +27,7 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
+        """Setter for width of the rectangle"""
         self.integer_validator("width", value)
         self.__width = value
 
@@ -37,6 +38,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """Setter for width of the rectangle"""
         self.integer_validator("height", value)
         self.__height = value
 
@@ -47,6 +49,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """Setter for width of the rectangle"""
         self.integer_validator("x", value)
         self.__x = value
 
@@ -57,6 +60,7 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """Setter for width of the rectangle"""
         self.integer_validator("y", value)
         self.__y = value
 
