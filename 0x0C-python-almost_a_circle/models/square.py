@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """Module for Square class"""
 from models.rectangle import Rectangle
 
@@ -23,10 +23,12 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
+        """Setter for size of the square"""
         self.width = value
         self.height = value
 
     def __str__(self):
+        """Returns a string representation of the Square"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.width)
 
