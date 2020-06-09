@@ -48,6 +48,26 @@ positional arguments but 6 were given"
         self.assertEqual(r4.id, r1.id + 2)
 
     # TESTS VALUE EXCEPTIONS FOR WIDTH, X & Y
+    def test_invalid_type_value(self):
+        """Test to validate size, x, and y type values"""
+        s = Square(1, 2)
+        self.assertEqual(s.size, 1)
+        self.assertRaises(TypeError, Square, 1.2)
+        self.assertRaises(TypeError, Square, 2, 3.3, 9)
+        self.assertRaises(TypeError, Square, float('inf'))
+        self.assertRaises(TypeError, Square, float('nan'))
+        self.assertRaises(TypeError, Square, 3, float('inf'), 3)
+        self.assertRaises(TypeError, Square, 3, 2, float('nan'))
+
+        self.assertRaises(TypeError, Square, None)
+        self.assertRaises(TypeError, Square, 2, None, 0)
+        self.assertRaises(TypeError, Square, 1, 9, None)
+
+        self.assertRaises(TypeError, Square, "abc")
+        self.assertRaises(TypeError, Square, 1, "abc", 0)
+        self.assertRaises(TypeError, Square, 2, 1, "abc")
+
+    # TESTS VALUE EXCEPTIONS FOR WIDTH, X & Y
     def test_invalid_value(self):
         """Test to validate zero or negative integers"""
         # Test ints <= 0 for width

@@ -65,7 +65,7 @@ positional arguments but 7 were given"
     def test_invalid_type_value(self):
         """Test to validate width, height, x, and y type values"""
         invtypes = [False, 'Matata', (2,), 3.14, -2.5, float('inf'), {1: 10},
-                    float('-inf'), [1], {100}, float('nan'), None]
+                    float('-inf'), 6j, [1], {100}, float('nan'), None]
 
         r = Rectangle(1, 2)
         attributes = ["width", "height", "x", "y"]
