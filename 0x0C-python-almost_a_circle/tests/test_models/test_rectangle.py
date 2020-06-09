@@ -9,7 +9,12 @@ from models.rectangle import Rectangle
 
 
 class TestRectangleClass(unittest.TestCase):
-    """Test Cases for Rectangle Class Module Functionality"""
+    """
+    Test Cases for Rectangle Class Module Functionality
+    """
+    def setUp(self):
+        Base._Base__nb_objects = 0
+        
     # ------------- Tests for Constructor --------------
     # TESTS CLASS
     def test_class_instance(self):
@@ -21,32 +26,22 @@ class TestRectangleClass(unittest.TestCase):
     def test_class_args_exceptions(self):
         """Test for positional arguments"""
         with self.assertRaises(TypeError) as error:
-            Rectangle()
+            r = Rectangle()
         err_msg = "__init__() missing 2 required \
 positional arguments: 'width' and 'height'"
         self.assertEqual(str(error.exception), err_msg)
 
         with self.assertRaises(TypeError) as error:
-            Rectangle(1)
+            r = Rectangle(1)
         err_msg = "__init__() missing 1 required \
 positional argument: 'height'"
         self.assertEqual(str(error.exception), err_msg)
 
         with self.assertRaises(TypeError) as error:
-            Rectangle(10, 2, 10, 10, 10, 5)
+            r = Rectangle(10, 2, 10, 10, 10, 5)
         err_msg = "__init__() takes from 3 to 6 \
 positional arguments but 7 were given"
         self.assertEqual(str(error.exception), err_msg)
-
-    # TESTS ID
-    def test_rectangle_id(self):
-        """Tests id after sequence"""
-        r1 = Rectangle(10, 2)
-        r2 = Rectangle(2, 10)
-        r3 = Rectangle(10, 2, 0, 0, 12)
-        r4 = Rectangle(20, 10)
-        self.assertEqual(r3.id, 12)
-        self.assertEqual(r4.id, r1.id + 2)
 
     # TESTS CONSTRUCTOR
     def test_instantiation(self):
@@ -76,7 +71,7 @@ positional arguments but 7 were given"
         for attribute in attributes:
             s = '{} must be an integer'.format(attribute)
             for invalid_type in invtypes:
-                print(s, invalid_type)
+                # print(s, invalid_type)
                 with self.assertRaisesRegex(TypeError, s):
                     setattr(r, attribute, invalid_type)
 
@@ -119,35 +114,51 @@ positional arguments but 7 were given"
         self.assertEqual(r.x, 5)
         self.assertEqual(r.y, 10)
 
-    # TESTS FOR AREA, DISPLAY, STR REPRESENTATION AND DICT RPR
-    @classmethod
-    def setUpClass(cls):
-        """Set instances for area and display tests"""
-        Base._Base__nb_objects = 0
-        cls.r1 = Rectangle(5, 5)
-        cls.r2 = Rectangle(10, 2, 5)
-        cls.r3 = Rectangle(4, 15, 1, 4, 99)
-        cls.r4 = Rectangle(10, 20, 30, 40)
-
+    # ------------- Tests for Methods --------------
     def test_area(self):
         """test area calculation"""
-        self.assertEqual(self.r1.area(), 25)
-        self.assertEqual(self.r2.area(), 20)
-        self.assertEqual(self.r3.area(), 60)
-        self.assertEqual(self.r4.area(), 200)
+        r = Rectangle(5, 5)
+        self.assertEqual(r.area(), 25)
+        r = Rectangle(10, 2, 5)
+        self.assertEqual(r.area(), 20)
+        r = Rectangle(4, 15, 1, 4, 99)
+        self.assertEqual(r.area(), 60)
 
     def test_area_args(self):
         """Test too many args for area"""
+        r = Rectangle(8, 1)
         with self.assertRaises(TypeError):
-            r = self.r1.area(10)
+            r.area(10)
+
+    def test_str(self):
+        r = Rectangle(8, 12, 2, 1, 12)
+        self.assertEqual(r.__str__(), "[Rectangle] (12) 2/1 - 8/12")
+        r = Rectangle(5, 5, 1, 1)
+        self.assertEqual(r.__str__(), "[Rectangle] (1) 1/1 - 5/5")
+        r = Rectangle(22, 22, 0)
+        self.assertEqual(r.__str__(), "[Rectangle] (2) 0/0 - 22/22")
+        r = Rectangle(33, 33)
+        self.assertEqual(r.__str__(), "[Rectangle] (3) 0/0 - 33/33")
+        """
+       Test for the __str__ method
+        r = Rectangle(5, 5)
+        self.assertEqual(str(r), "[Rectangle] (1) 0/0 - 5/5")
+        r = Rectangle(10, 2, 5)
+        self.assertEqual(str(r), "[Rectangle] (2) 5/0 - 10/2")
+        r = Rectangle(4, 15, 1, 4, 99)
+        self.assertEqual(str(r), "[Rectangle] (99) 1/4 - 4/15")
+        r = Rectangle(10, 20, 30, 40)
+        self.assertEqual(str(r), "[Rectangle] (3) 30/40 - 10/20"
+        """
 
     def test_basic_display(self):
         """Test display without x and y"""
-        r = Rectangle(5, 3, 0, 0, 1)
+        r = Rectangle(5, 5)
         with io.StringIO() as buf, redirect_stdout(buf):
-            self.r1.display()
+            r.display()
             output = buf.getvalue()
             self.assertEqual(output, ("#" * 5 + "\n") * 5)
+        r = Rectangle(5, 3, 0, 0, 1)
         with io.StringIO() as buf, redirect_stdout(buf):
             r.display()
             output = buf.getvalue()
@@ -155,25 +166,25 @@ positional arguments but 7 were given"
 
     def test_display_with_coordinates(self):
         """Test display with x and y"""
-        r = Rectangle(5, 3, 0, 0, 1)
-        r.display()
+        r = Rectangle(10, 2, 5)
         with io.StringIO() as buf, redirect_stdout(buf):
-            self.r2.display()
+            r.display()
             output = buf.getvalue()
             self.assertEqual(output, (" " * 5 + "#" * 10 + "\n") * 2)
+        r = Rectangle(4, 15, 1, 4, 99)
         with io.StringIO() as buf, redirect_stdout(buf):
-            self.r3.display()
+            r.display()
             output = buf.getvalue()
             self.assertEqual(output, (("\n" * 4) + (" " * 1 + "#" * 4 + "\n") * 15))
+        r = Rectangle(5, 3, 0, 0, 1)
         with io.StringIO() as buf, redirect_stdout(buf):
             r.display()
             output = buf.getvalue()
             print('hola')
             self.assertEqual(output, (" " * 0 + "#" * 5 + "\n") * 3)
 
-    def test_str(self):
-        """Test for the __str__ method"""
-        self.assertEqual(str(self.r1), "[Rectangle] (1) 0/0 - 5/5")
-        self.assertEqual(str(self.r2), "[Rectangle] (2) 5/0 - 10/2")
-        self.assertEqual(str(self.r3), "[Rectangle] (99) 1/4 - 4/15")
-        self.assertEqual(str(self.r4), "[Rectangle] (3) 30/40 - 10/20")
+if __name__ == "__main__":
+    unittest.main()
+
+
+
