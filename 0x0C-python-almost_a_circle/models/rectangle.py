@@ -94,7 +94,7 @@ class Rectangle(Base):
         if args:
             """No-keyword argument attributes"""
             for idx, attr_val in enumerate(args):
-                if hasattr(self, slots[idx]):
+                if hasattr(self, slots[idx]) and idx < 5:
                     setattr(self, slots[idx], attr_val)
         elif kwargs:
             """Dictionary: key/value attributes"""
