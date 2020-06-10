@@ -76,6 +76,16 @@ positional arguments but 7 were given"
                 with self.assertRaisesRegex(TypeError, s):
                     setattr(r, attribute, invalid_type)
 
+    # TESTS VALUE EXCEPTIONS FOR WIDTH, X & Y
+    def test_invalid_type_value_for_the_checker(self):
+        """Test to validate width, height, x, and y type values"""
+        r = Rectangle(1, 2)
+        self.assertEqual(r.width, 1)
+        self.assertRaises(TypeError, Rectangle, "1", 2)
+        self.assertRaises(TypeError, Rectangle, 1, "2")
+        self.assertRaises(TypeError, Rectangle, 1, 2, "3")
+        self.assertRaises(TypeError, Rectangle, 1, 2, 3, "4")
+
     # TESTS VALUE EXCEPTIONS FOR WIDTH, HEIGHT, X & Y
     def test_invalid_value(self):
         """Test to validate zero or negative integers"""
