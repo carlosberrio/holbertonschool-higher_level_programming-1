@@ -2,6 +2,7 @@
 """Module for Base Class"""
 from json import dumps, loads
 from os import path
+import csv
 
 
 class Base:
@@ -75,8 +76,54 @@ class Base:
         else:
             return []
 
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes a list of Rectangles/Squares objects
+        Args:
+            List of squares or Rectangle instances
+        """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if list_objs is not None:
+            if cls is Rectangle:
+                list_objs = [[ob.id, ob.width, ob.height, ob.x, ob.y]
+                             for ob in list_objs]
+            else:
+                list_objs = [[ob.id, ob.size, ob.x, ob.y]
+                             for ob in list_objs]
+        with open('{}.csv'.format(cls.__name__), 'w', newline='',
+                  encoding='utf-8') as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Deserializes a list of Rectangles/Squares in csv
+        Returns:
+            is file is None or empty, return an empty list
+            Otherwise, a list of instances
+        """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        inst_list = []
+        with open('{}.csv'.format(cls.__name__), 'r', newline='',
+                  encoding='utf-8') as csvfile:
+            reader = csv.reader(csvfile)
+            for row in reader:
+                row = [int(r) for r in row]
+                if cls is Rectangle:
+                    dic = {"id": row[0], "width": row[1], "height": row[2],
+                         "x": row[3], "y": row[4]}
+                else:
+                    dic = {"id": row[0], "size": row[1],
+                         "x": row[2], "y": row[3]}
+                inst_list.append(cls.create(**dic))
+        return inst_list
+
     @staticmethod
     def draw(list_rectangles, list_squares):
+        """Opens a window and draws all the Rectangles and Squares
+        using the Turtle graphics module"""
         import turtle
         from time import sleep
         from random import randrange, choice
