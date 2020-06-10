@@ -113,10 +113,10 @@ class Base:
                 row = [int(r) for r in row]
                 if cls is Rectangle:
                     dic = {"id": row[0], "width": row[1], "height": row[2],
-                         "x": row[3], "y": row[4]}
+                           "x": row[3], "y": row[4]}
                 else:
                     dic = {"id": row[0], "size": row[1],
-                         "x": row[2], "y": row[3]}
+                           "x": row[2], "y": row[3]}
                 inst_list.append(cls.create(**dic))
         return inst_list
 
