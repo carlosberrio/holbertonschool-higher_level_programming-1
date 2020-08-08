@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+""" 2-my_filter_states
 Module that filters states by user input
 MySQL Query module using MySQLdb
 """
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     query = """
-    SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC
+    SELECT * FROM states WHERE BINARY name LIKE '{}' ORDER BY id ASC
     """.format(argv[4])
 
     cur.execute(query)
