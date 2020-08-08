@@ -20,6 +20,5 @@ if __name__ == "__main__":
     # Create a Session
     session = Session()
     state = session.query(State).order_by(State.id).first()
-    if state:
-        print("{}: {}".format(state.id, state.name))
+    print("{}: {}".format(state.id, state.name) if state else "Nothing")
     session.close()

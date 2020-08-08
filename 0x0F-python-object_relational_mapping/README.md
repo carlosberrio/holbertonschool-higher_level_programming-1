@@ -13,6 +13,10 @@
 * [SQLAlchemy 1.3 Documentation - Session Basics](https://docs.sqlalchemy.org/en/13/orm/session_basics.html)
 * [SQLAlchemy 1.3 Documentation - Querying](https://docs.sqlalchemy.org/en/13/orm/tutorial.html)
 * [SQL LIKE Operator](https://www.w3schools.com/sql/sql_like.asp)
+* [Using “WHERE binary” in SQL?](https://www.tutorialspoint.com/using-where-binary-in-sql)
+* [Basic Relationship Patterns](https://docs.sqlalchemy.org/en/13/orm/basic_relationships.html)
+* [Principales tipos de JOINS en SQL](https://diego.com.es/principales-tipos-de-joins-en-sql)
+* [Querying with Joins](https://docs.sqlalchemy.org/en/13/orm/tutorial.html)
 
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
