@@ -11,7 +11,6 @@ Base = declarative_base()
 
 class State(Base):
     """Defines the State Class that inherits from Base"""
-    #  rows of the states table will be mapped to State class
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, autoincrement=True,
                 nullable=False, unique=True)
