@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ 10-model_state_my_get
-Module that connects with the hbtn_0e_6_usa database and prints the State
-ID according name passed as argument from the database hbtn_0e_6_usa
+Module that connects with a (user input) database and prints the State
+ID according name passed as argument from that database
 """
 from sys import argv
 from model_state import Base, State

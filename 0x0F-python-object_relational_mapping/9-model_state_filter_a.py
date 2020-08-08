@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ 9-model_state_filter_a
-Module that connects with the hbtn_0e_6_usa database and lists all
-State objects that contain the letter 'a' from the database hbtn_0e_6_usa
+Module that connects with a (user input) database and lists all
+State objects that contain the letter 'a' from that database
 """
 from sys import argv
 from model_state import Base, State

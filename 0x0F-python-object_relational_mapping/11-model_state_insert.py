@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ 11-model_state_insert
-Module that connects with the hbtn_0e_6_usa database
-and adds the State object “Louisiana” to the database hbtn_0e_6_usa
+Module that connects with a (user input) database
+and adds the State object “Louisiana” to that database
 """
 from sys import argv
 from model_state import Base, State

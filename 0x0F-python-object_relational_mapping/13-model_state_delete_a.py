@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ 13-model_state_delete_a
-Module that connects with the hbtn_0e_6_usa database and deletes all State
-objects with a name containing the letter 'a' from the database hbtn_0e_6_usa
+Module that connects with a (user input) database and deletes all State
+objects with a name containing the letter 'a' from that database
 """
 from sys import argv
 from model_state import Base, State

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ 8-model_state_fetch_first.py
-Module that connects with the hbtn_0e_6_usa database and
-prints the first State object from the database hbtn_0e_6_usa
+Module that connects with a (user input) database and
+prints the first State object from that database
 """
 from sys import argv
 from model_state import Base, State

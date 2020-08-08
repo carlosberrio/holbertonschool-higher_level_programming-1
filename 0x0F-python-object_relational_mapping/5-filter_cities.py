@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+""" 5-filter_cities
 Module that takes a name of a state as an argument and lists all cities
 of that state, using the database hbtn_0e_4_usa.
 MySQL Query module using MySQLdb

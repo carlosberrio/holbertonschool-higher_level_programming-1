@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-""" Hello 14"""
+""" 14-model_city_fetch_by_state
+Module that connects with a (user input) database
+and prints all City objects from that database:
+"""
 from sys import argv
 from model_state import Base, State
 from model_city import City
