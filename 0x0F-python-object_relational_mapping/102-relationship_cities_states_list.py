@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" 101-relationship_states_cities_list
+""" 102-relationship_cities_states_list
 Module that connects with a (user input) database and lists all State objects,
 and corresponding Cities (using cities relationship for all State objects)
 """
