@@ -1,12 +1,29 @@
 # 0x10. Python - Network #0
 
+## Learning Objectives:
+* What a URL is
+* What HTTP is
+* How to read a URL
+* The scheme for a HTTP URL
+* What a domain name is
+* What a sub-domain is
+* How to define a port number in a URL
+* What a query string is
+* What an HTTP request is
+* What an HTTP response is
+* What HTTP headers are
+* What the HTTP message body is
+* What an HTTP request method is
+* What an HTTP response status code is
+* What an HTTP Cookie is
+* How to make a request with cURL
+* What happens when you type google.com in your browser (Application level)
 
-SSH access: ssh 9914d125a5ef@879dfdd1.hbtn-cod.io
-Password: 71b217593295cf6cd37e
+## Resources
+* [HTTP Headers](https://www.techopedia.com/definition/27178/http-header)
 
-curl -s -o /dev/null -D 0.0.0.0:5000/route_4
+### Author:
+* Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
 
-curl -s -I 0.0.0.0:5000/route_4  | grep "Allow" | cut -d ":"  -f2
-
-curl -s -I 0.0.0.0:5000/route_4  | grep "Allow" | sed 's/Allow: //g'
-
+##### Foundations - System engineering & DevOps ― Web stack
+##### August, 2020. Cali, Colombia.
