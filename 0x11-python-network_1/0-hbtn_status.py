@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Module that fetches https://intranet.hbtn.io/status and prints content response
+"""
 import urllib.request
 
 if __name__ == '__main__':
