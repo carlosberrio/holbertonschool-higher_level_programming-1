@@ -2,7 +2,7 @@
 """
 Module that takes in a URL and an email address, sends a POST request
 to the passed URL with the email as a parameter, and finally displays
-the body of the response.  26347e6722ab2f1dd0a9
+the body of the response.
 """
 import requests
 from sys import argv
