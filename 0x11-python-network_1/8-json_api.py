@@ -11,10 +11,9 @@ if __name__ == '__main__':
     value = "" if len(argv) == 1 else argv[1]
     response = requests.post(url, data={'q': value})
     if response.headers.get('content-type') == 'application/json':
-        if response.json():
-            id = response.json().get('id')
-            name = response.json().get('name')
-            print("[{}] {}".format(id, name))
+        json = response.json()
+        if json:
+            print("[{}] {}".format(json.get('id'), json.get('name')))
         else:
             print("No result")
     else:
