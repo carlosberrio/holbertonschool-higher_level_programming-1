@@ -13,8 +13,6 @@ if __name__ == '__main__':
     response = requests.get(url)
     json = response.json()
     for n in range(10):
-        # 3b5a6dfb18f33c373a89760c60d741f34206f23b: Jon Moss
-        sha = json[n]['sha']
-        name_request = requests.get(json[n]['author']['url'])
-        author = name_request.json().get('name')
-        print("{}: {}".format(sha, author))
+        print("{}: {}"
+              .format(json[n].get('sha'),
+                      json[n].get('commit').get('author').get('name')))
