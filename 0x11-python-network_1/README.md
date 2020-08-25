@@ -9,6 +9,10 @@
 * How to fetch JSON resources
 * How to manipulate data from an external service
 
+## Resources:
+* [Developer Interface - class requests.Response](https://requests.readthedocs.io/en/master/api/#requests.Response)
+* [Interacting with the Twitter API using python](https://benalexkeen.com/interacting-with-the-twitter-api-using-python/)
+
 ### Author:
 * Tatiana Orejuela Zapata | [Github](https://github.com/tatsOre)
 
