@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const request = require('request');
-const URL = `https://swapi-api.hbtn.io/api/films/`;
+const URL = process.argv[2];
 request(URL, function (err, response, body) {
   if (err) console.log(err);
   let count = 0;
