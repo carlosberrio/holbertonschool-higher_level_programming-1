@@ -1,5 +1,4 @@
-/* Updates the text color of the HTML tag HEADER to red (#FF0000): */
-
+/* Adds, removes and clears LI elements from a list when the user clicks: */
 $(function () {
   $('div#add_item').click(function () {
     $('ul.my_list').append('<li>Item</li>');

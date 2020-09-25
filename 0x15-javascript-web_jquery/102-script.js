@@ -1,5 +1,4 @@
-/* Updates the text color of the HTML tag HEADER to red (#FF0000): */
-/*  */
+/* Fetches and prints how to say "Hello" depending of the language */
 $(function () {
   $('input#btn_translate').click(() => {
     const language = $('input#language_code').val();
